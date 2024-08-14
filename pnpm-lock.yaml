@@ -11,6 +11,9 @@ importers:
       axios:
         specifier: ^1.7.3
         version: 1.7.3
+      canvas-confetti:
+        specifier: ^1.9.3
+        version: 1.9.3
       vue:
         specifier: ^3.4.29
         version: 3.4.36(typescript@5.4.5)
@@ -21,6 +24,9 @@ importers:
       '@tsconfig/node20':
         specifier: ^20.1.4
         version: 20.1.4
+      '@types/canvas-confetti':
+        specifier: ^1.6.4
+        version: 1.6.4
       '@types/jsdom':
         specifier: ^21.1.7
         version: 21.1.7
@@ -562,6 +568,9 @@ packages:
   '@tsconfig/node20@20.1.4':
     resolution: {integrity: sha512-sqgsT69YFeLWf5NtJ4Xq/xAF8p4ZQHlmGW74Nu2tD4+g5fAsposc4ZfaaPixVu4y01BEiDCWLRDCvDM5JOsRxg==}
 
+  '@types/canvas-confetti@1.6.4':
+    resolution: {integrity: sha512-fNyZ/Fdw/Y92X0vv7B+BD6ysHL4xVU5dJcgzgxLdGbn8O3PezZNIJpml44lKM0nsGur+o/6+NZbZeNTt00U1uA==}
+
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
 
@@ -888,6 +897,9 @@ packages:
 
   caniuse-lite@1.0.30001650:
     resolution: {integrity: sha512-fgEc7hP/LB7iicdXHUI9VsBsMZmUmlVJeQP2qqQW+3lkqVhbmjEU8zp+h5stWeilX+G7uXuIUIIlWlDw9jdt8g==}
+
+  canvas-confetti@1.9.3:
+    resolution: {integrity: sha512-rFfTURMvmVEX1gyXFgn5QMn81bYk70qa0HLzcIOSVEyl57n6o9ItHeBtUSWdvKAPY0xlvBHno4/v3QPrT83q9g==}
 
   chai@4.5.0:
     resolution: {integrity: sha512-RITGBfijLkBddZvnn8jdqoTypxvqbOLYQkGGxXzeFjVHvudaPw0HNFD9x928/eUwYWd2dPCugVqspGALTZZQKw==}
@@ -2682,6 +2694,8 @@ snapshots:
 
   '@tsconfig/node20@20.1.4': {}
 
+  '@types/canvas-confetti@1.6.4': {}
+
   '@types/estree@1.0.5': {}
 
   '@types/jsdom@21.1.7':
@@ -3097,6 +3111,8 @@ snapshots:
   camelcase@6.3.0: {}
 
   caniuse-lite@1.0.30001650: {}
+
+  canvas-confetti@1.9.3: {}
 
   chai@4.5.0:
     dependencies:

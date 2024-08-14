@@ -1,10 +1,26 @@
 import pokemonApi from '../api/pokemonApi';
 import { GameStatus, type Pokemon, type PokemonListReponse } from '../interfaces/index.interfaces';
 import { computed, onMounted, ref } from 'vue';
+import confetti from 'canvas-confetti';
+
 export const usePokemonGame = () => {
   const gameStatus = ref<GameStatus>(GameStatus.Playing);
   const pokemons = ref<Pokemon[]>([]);
   const isLoading = computed(() => pokemons.value.length === 0);
+  const checkAnswer = (id: number) => {
+    const hasWon = randomPokemon.value.id === id;
+    if (hasWon) {
+      gameStatus.value = GameStatus.Won;
+      confetti({
+        particleCount: 300,
+        spread: 150,
+        origin: { y: 0.6 },
+      });
+      return;
+    }
+    gameStatus.value = GameStatus.Lost;
+    return;
+  };
   const pokemonOptions = ref<Pokemon[]>([]);
   const randomPokemon = computed(
     () => pokemonOptions.value[Math.floor(Math.random() * pokemonOptions.value.length)],
@@ -22,7 +38,7 @@ export const usePokemonGame = () => {
     return pokemonsArray.sort(() => Math.random() - 0.5);
   };
 
-  const getNextOptions = (howMany: number = 4) => {
+  const getNextRound = (howMany: number = 4) => {
     gameStatus.value = GameStatus.Playing;
     pokemonOptions.value = pokemons.value.slice(0, howMany); // Cut the first 4
     pokemons.value = pokemons.value.slice(howMany); // taking the rest of the array
@@ -30,16 +46,16 @@ export const usePokemonGame = () => {
 
   onMounted(async () => {
     pokemons.value = await getPokemons();
-    getNextOptions();
-    console.log(randomPokemon);
-    console.log(pokemonOptions.value);
+    getNextRound();
   });
   return {
     gameStatus,
     isLoading,
     pokemonOptions,
     //Methods
-    getNextOptions,
+    getNextRound,
     randomPokemon,
+    checkAnswer,
+    // hasW  on,
   };
 };
